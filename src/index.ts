@@ -33,6 +33,18 @@ async function main() {
         if (isFinite(num)) {
           curGPIO = Math.floor(num);
         }
+      } else if (input.startsWith('all')) {
+        const num = Number(input.split(/\s+/)[1]);
+        if (isFinite(num)) {
+          let value = Math.floor(num) + 10;
+          if (value < 10 || value > 20) {
+            value = 10;
+          }
+          iPwm.PWMSet(GPIO.GPIO0, value);
+          iPwm.PWMSet(GPIO.GPIO2, value);
+          iPwm.PWMSet(GPIO.GPIO3, value);
+          iPwm.PWMSet(GPIO.GPIO7, value);
+        }
       } else {
         const num = Number(input);
         if (isFinite(num) && curGPIO !== null) {
