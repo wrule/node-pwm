@@ -1,0 +1,17 @@
+{
+  "name": "node-pwm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node built/index.js"
+  },
+  "repository": "https://github.com/wrule/node-pwm",
+  "author": "鸡毛 <shihao.gu@perfma.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@types/ffi": "^0.2.2",
+    "ffi": "^2.3.0"
+  }
+}
