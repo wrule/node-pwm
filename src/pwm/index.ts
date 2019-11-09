@@ -1,4 +1,5 @@
 import ffi from 'ffi';
+import { GPIO } from '../gpio';
 
 export class Pwm {
   private funcWiringPiInit: any;
@@ -8,10 +9,10 @@ export class Pwm {
   public WiringPiInit(): void {
     this.funcWiringPiInit();
   }
-  public PWMInit(gpio: number, min: number, max: number): void {
+  public PWMInit(gpio: GPIO, min: number, max: number): void {
     this.funcPWMInit(gpio, min, max);
   }
-  public PWMSet(gpio: number, value: number): void {
+  public PWMSet(gpio: GPIO, value: number): void {
     this.funcPWMSet(gpio, value);
   }
 
